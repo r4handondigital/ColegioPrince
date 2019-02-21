@@ -145,12 +145,33 @@ a.color-bt:hover{
 }
 
 .sessao-localizacao{
-	padding: 30px 0;
+	padding: 30px 0 0 0;
+}
+
+.sessao-localizacao .row{
+	margin-bottom: 0;
 }
 
 .sessao-inferior{
 	background:#061c51 ;
 	color: #fff;
+}
+
+i.right {
+    float: right;
+    margin-left: 0;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 16px;
+    color: #224390;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+
+.dropdown-content{
+	top: 64px !important;
 }
 
 footer{
@@ -179,6 +200,11 @@ footer ul li{
 footer ul li a{
 	color: #556a9b;
 }
+
+footer strong{
+	display: block;
+	margin-left: 15px;
+}
 .sessao-inferior{
 	padding: 10px 0;
 }
@@ -187,11 +213,62 @@ footer ul li a{
 	font-weight: bold;
 	color: #fddc44;
 }
+
+
+.side-nav{
+	background-color: #c62828;
+}
+
+.side-nav a{
+	color: #fff !important;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+@media only screen and (max-width: 1400px){
+	.detalhes-inf h3{
+		font-size: 12px;
+	}
+
+	.detalhes-inf h3 i {
+    font-size: 50px;
+}
+
+	.detalhes-inf h3 span {
+    display: block;
+    font-size: 7px;
+    position: relative;
+    right: -36px;
+    top: -5px;
+}
+	
+}
+
+@media only screen and (max-width: 1290px){
+	.detalhes-inf h3{
+		font-size: 11px;
+	}
+
+	.detalhes-inf h3 i {
+    font-size: 40px;
+}
+.detalhes-inf h3 span {
+    display: block;
+    font-size: 7px;
+    position: relative;
+    right: -32px;
+    top: -3px;
+}
+
+
+}
+
+
 @media only screen and  (min-width:1150px){
 
 	.container{
 		width: 1170px;
 	}
+	
 
 
 
@@ -217,10 +294,10 @@ footer ul li a{
     
 }
 /* COL-XS */
-@media only screen and  (max-width:767px){
+@media only screen and  (min-width:600px){
 
-	#maxmeio-id{
-		display: none !important;
-	}
+	.container {
+    width: 97%;
+}
 
 }
