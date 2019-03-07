@@ -18,6 +18,10 @@ a:hover{
 	opacity: 0.8;
 }
 
+nav ul a{
+	padding: 0 12px;
+}
+
 .no-m{
 	margin: 0;
 }
@@ -59,6 +63,10 @@ header nav a{
 nav{
 	background: #c62828;
 
+}
+
+.texto{
+	text-align: justify;
 }
 
 .destaque img{
@@ -224,6 +232,39 @@ footer strong{
 	font-weight: bold;
 	text-transform: uppercase;
 }
+
+
+
+/** =Paginate links Styles
+ ******************************************* **/
+.page-numbers {
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+.page-numbers li {
+    display: inline-block;
+    margin-left: 3px;
+    border-radius: 50%;
+}
+.page-numbers a, .page-numbers .dots, .page-numbers .next, .page-numbers .prev {
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 40%;
+    border: 2px solid #3f3f3f;
+}
+.page-numbers a:hover, .page-numbers .next:hover, .page-numbers .prev:hover {
+    background: #666;
+	color:#fff;
+}
+.page-numbers .current {
+padding: 6px 12px;
+    border-radius: 40%;
+    border: 2px solid #2c4190;
+    color: #2c4190;
+}
+
+
 @media only screen and (max-width: 1400px){
 	.detalhes-inf h3{
 		font-size: 12px;
