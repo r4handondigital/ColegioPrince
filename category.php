@@ -14,7 +14,7 @@
 			          			<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 								<div class="col s12 m4">
-									<a href=""><img src="<?php the_field('imagem_da_capa'); ?>" class="responsive-img">
+									<a href="<?php the_permalink(); ?>"><img src="<?php the_field('imagem_da_capa'); ?>" class="responsive-img">
 									<h4 class="not-mais"><span><?php echo get_the_date('d'); ?> de <?php echo get_the_date('F'); ?></span><?php echo strip_tags(get_the_title()); ?></h4>	</a>
 								</div>
 								<?php endwhile; endif; ?> 

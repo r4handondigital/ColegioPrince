@@ -45,7 +45,7 @@
         		<div class="container">
 					<div class="row">
 						<div class="col s6">
-							<a href="" class="logo-topo"><img src="<?php bloginfo('template_url'); ?>/imgs/logo-prince.svg" width="344"></a>
+							<a href="<?php bloginfo('url'); ?>" class="logo-topo"><img src="<?php bloginfo('template_url'); ?>/imgs/logo-prince.svg" width="344"></a>
 						</div>
 						<div class="col s6">
 							<a href="https://agendaedu.com/" target="_blank" class="edu-bt right"><img src="<?php bloginfo('template_url'); ?>/imgs/agenda-edu.png"></a>
@@ -116,9 +116,17 @@
 				</ul>
 
         </header>
- 		<section class="destaque">
+
+        	<?php if (is_home()): ?>
+<section class="destaque">
         	<img src="<?php bloginfo('template_url'); ?>/imgs/destaque.jpg" class="responsive-img">
-        </section>
+        </section>			        
+			        <?php else: ?>
+			            
+			        <?php endif ?>
+
+
+ 		
         
         <section class="detalhes-inf blue darken-4">
         	
