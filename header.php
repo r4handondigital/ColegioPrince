@@ -13,17 +13,19 @@
 
 		<!-- FONTES -->
 
-
+<?php wp_head() ?>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   		<link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans" rel="stylesheet">
-        
+        <link href="<?php bloginfo('template_url'); ?>/lib/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/owl-carousel/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/owl-carousel/assets/owl.theme.green.min.css">
        	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/materialize/css/materialize.min.css">
 
 		
 
 		<!-- Custom styles for this template -->
-		<link  type="text/css" href="<?php bloginfo('template_url'); ?>/lib/css/principal.css" rel="stylesheet">
+		<link  type="text/css" href="<?php bloginfo('template_url'); ?>/lib/css/principal.css?date=<? echo date ("Ymdhis")?>" rel="stylesheet">
 	</head>
         <body>
        
@@ -34,8 +36,8 @@
 						<div class="col s12">
 							<ul class="text-topo right">
 								<li><i class="fas fa-phone"></i> (84) 3642.2758 | 3642.2758    BERCÁRIO: (84) 3025.1091</li>
-								<li class="rd"><a href=""><i class="fab fa-facebook"></i></a></li>
-								<li class="rd"><a href=""><i class="fab fa-instagram"></i></a></li>
+								<li class="rd"><a href="https://www.facebook.com/colegioprince/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+								<li class="rd"><a href="https://www.instagram.com/colegioprince/" target="_blank"><i class="fab fa-instagram"></i></a></li>
 							</ul>
 						</div>
 					</div>	
@@ -44,10 +46,10 @@
         	<section>
         		<div class="container">
 					<div class="row">
-						<div class="col s6">
-							<a href="<?php bloginfo('url'); ?>" class="logo-topo"><img src="<?php bloginfo('template_url'); ?>/imgs/logo-prince.svg" width="344"></a>
+						<div class="col s12 m6">
+							<a href="<?php bloginfo('url'); ?>" class="logo-topo"><img src="<?php bloginfo('template_url'); ?>/imgs/logo-prince.svg" width="338"></a>
 						</div>
-						<div class="col s6">
+						<div class="col s12 m6">
 							<a href="https://agendaedu.com/" target="_blank" class="edu-bt right"><img src="<?php bloginfo('template_url'); ?>/imgs/agenda-edu.png"></a>
 						</div>
 					</div>
@@ -61,20 +63,20 @@
 				      	<li><a class="dropdown-button" href="#!" data-activates="dropdown1">INSTITUCIONAL<i class="material-icons right">arrow_drop_down</i></a></li>
 				      	<li><a class="dropdown-button" href="#!" data-activates="dropdown2">NÍVEIS DE ENSINO<i class="material-icons right">arrow_drop_down</i></a></li>
 				      	<li><a class="dropdown-button" href="#!" data-activates="dropdown3">ATIVIDADES EXTRACURRICULARES<i class="material-icons right">arrow_drop_down</i></a></li>
-				        <li><a href="<?php bloginfo('url'); ?>/">NOTÍCIAS</a></li>
-				        <li><a href="<?php bloginfo('url'); ?>/">CALENDÁRIO / AGENDA</a></li>
-				        <li><a href="<?php bloginfo('url'); ?>/">MIDIA</a></li>
-				        <li><a href="mobile.html">LOCALIZAÇÃO</a></li>
+				        <li><a href="<?php bloginfo('url'); ?>/topico/noticias">NOTÍCIAS</a></li>
+				        <li><a href="<?php bloginfo('url'); ?>calendario-agenda">CALENDÁRIO / AGENDA</a></li>
+				        <li><a href="<?php bloginfo('url'); ?>/videos">MIDIA</a></li>
+				        <li><a href="#localizacao">LOCALIZAÇÃO</a></li>
 				        <li><a href="<?php bloginfo('url'); ?>/institucional/contato/">CONTATO</a></li>
 				      </ul>
 				      <ul class="side-nav" id="mobile-demo">
 				        <li><a href="<?php bloginfo('url'); ?>/institucional/">Institucional</a></li>
 				        <li><a href="<?php bloginfo('url'); ?>/niveis-de-ensino/">Níveis de ensino</a></li>
 				        <li><a href="<?php bloginfo('url'); ?>/atividades/">Atividades Extracurriculares</a></li>
-				        <li><a href="<?php bloginfo('url'); ?>//">Notícias</a></li>
-				        <li><a href="<?php bloginfo('url'); ?>/atividades/">CALENDÁRIO / AGENDA</a></li>
-				        <li><a href="<?php bloginfo('url'); ?>/">MIDIA</a></li>
-				        <li><a href="mobile.html">LOCALIZAÇÃO</a></li>
+				        <li><a href="<?php bloginfo('url'); ?>/topico/noticias">Notícias</a></li>
+				        <li><a href="<?php bloginfo('url'); ?>calendario-agenda">CALENDÁRIO / AGENDA</a></li>
+				        <li><a href="<?php bloginfo('url'); ?>/videos">MIDIA</a></li>
+				        <li><a href="#localizacao">LOCALIZAÇÃO</a></li>
 				        <li><a href="<?php bloginfo('url'); ?>/institucional/contato/">CONTATO</a></li>				        
 				      </ul>
 			    </div>
@@ -118,8 +120,20 @@
         </header>
 
         	<?php if (is_home()): ?>
-<section class="destaque">
-        	<img src="<?php bloginfo('template_url'); ?>/imgs/destaque.jpg" class="responsive-img">
+<section class="destaque owl-carousel owl-theme">
+
+        	
+
+        	<?php query_posts(array( 'post_type' => 'vitrine','showposts' => '8','orderby' => 'rand' )); ?>
+          			<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+					<div class="item">
+						<img src="<?php the_field('vitrine'); ?>" class="responsive-img">
+					</div>
+					<?php endwhile; endif; ?> 
+	         	<?php wp_reset_query(); ?>
+
+
         </section>			        
 			        <?php else: ?>
 			            

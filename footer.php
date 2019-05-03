@@ -1,6 +1,6 @@
 
 
-         <section class="sessao-localizacao grey lighten-3">
+         <section class="sessao-localizacao grey lighten-3" id="localizacao">
 			<div class="container">
 				<div class="row">
 					<div class="col s12">
@@ -43,38 +43,36 @@
 						</ul>
 					</div>
 					<div class="col s12 l3 m6">
-						<h5><a href="">CALENDÁRIO / AGENDA</a></h5>
+						<h5><a href="<?php bloginfo('url'); ?>calendario-agenda">CALENDÁRIO / AGENDA</a></h5>
 
-						<h5>MÍDIA</h5>
-						<ul>
+						<h5><a href="<?php bloginfo('url'); ?>/videos">MIDIA</a></h5>
+						<!--<ul>
 							<li>- VÍDEOS</li>
 							<li>- CLIPPING</li>
 							<li>- JINGLE</li>
-						</ul>
+						</ul>-->
 					</div>
 					<div class="col s12 l3 m6">
-						<h5>NOTÍCIAS</h5>
-						<h5>CONTATO</h5>
+						 <h5><a href="<?php bloginfo('url'); ?>/topico/noticias">NOTÍCIAS</a></h5>
+						<h5><a href="<?php bloginfo('url'); ?>/institucional/contato/">CONTATO</a></h5>
 					</div>
 				</div>
          	</div>
          	<section class="sessao-inferior">
          		<div class="container">
          			<div class="row no-m">
-						<div class="col s12 m5">
-							
-							<p><span>Colégio Prince</span><i class="fas fa-map-marker-alt"></i> Rua Industrial João Motta, 1497 - Capim Macio - 59082-410<br>  <i class="fas fa-phone"></i> (84) 3642.2758 | 3642.2758</p> 
+						<div class="col s12 m6">
+							<img src="<?php bloginfo('template_url'); ?>/imgs/rodape-colegio-prince.png" class="imgfooter">
+							<p><span>Colégio Prince</span><i class="fas fa-map-marker-alt"></i> Rua Industrial João Motta, 1497 - Capim Macio - 59082-410<br>  <i class="fas fa-phone"></i> (84) 3642-2758 | (84) 3642.2758</p> 
 							
 							
 						</div>
-						<div class="col s12 m5">
+						<div class="col s12 m6">
 							
-						
+							<img src="<?php bloginfo('template_url'); ?>/imgs/rodape-pequeno-prince.png" class="imgfooter">
 							<p><span>Pequeno Prince</span><i class="fas fa-map-marker-alt"></i> Rua Francisco Pignataro, 1946 - Capim Macio - 59082-070<br> <i class="fas fa-phone"></i> (84) 3025-1091. </p>
 						</div>
-						<div class="col s2 m2">
-							<p><img src="<?php bloginfo('template_url'); ?>/imgs/logo-parceiras.png" class="responsive-img"></p>
-						</div>
+						
 					</div>
          		</div>
          	</section>
@@ -87,10 +85,11 @@
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/lib/js/jquery.min.js"></script>
         <script type="text/javascript"  src="<?php bloginfo('template_url'); ?>/lib/js/jquery-migrate-3.0.1.min.js"></script>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/lib/materialize/js/materialize.min.js"></script>
-        
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/lib/js/script.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/lib/owl-carousel/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/lib/js/script.js?date=<? echo date ("Ymdhis")?>"></script>
 
         <div id="fb-root"></div>
 			<script async defer src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=272357990148147&autoLogAppEvents=1"></script>
         </body>
+        <?php wp_footer() ?>
 </html>
